@@ -14,6 +14,8 @@ public class Book {
     private Long id;
     private String title;
     private String isbn;
+
+    @OneToOne
     private Publisher publisher;
 
     @ManyToMany
@@ -24,12 +26,12 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String isbn) {
+    public Book(String title, String isbn, Publisher publisher) {
         this.title = title;
         this.isbn = isbn;
     }
 
-    public Book(String title, String isbn, Set<Author> authors) {
+    public Book(String title, String isbn, Publisher publisher, Set<Author> authors) {
         this.title = title;
         this.isbn = isbn;
         this.authors = authors;
@@ -57,6 +59,14 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
     public Set<Author> getAuthors() {
