@@ -5,13 +5,14 @@
     <title>Spring Framework Guru</title>
 </head>
 <body>
-<h1>Book List</h1>
+<h1>Author List</h1>
 
 <table>
     <tr>
         <th>ID</th>
-        <th>Title</th>
-        <th>Publisher</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Books</th>
     </tr>
     <tr th:each="author : ${authors}"> <!--tymeleaf iterator -->
         <td th:text="${author.id}">123</td>
